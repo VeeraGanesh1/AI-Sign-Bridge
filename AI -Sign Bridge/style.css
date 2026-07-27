@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+}
+
+.header{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.header p{
+    color:#dbeafe;
+    font-size:18px;
+}
+
+.input-box,
+.processing,
+.result-box{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+h2{
+
+    color:#1e3a8a;
+
+    margin-bottom:15px;
+
+}
+
+textarea{
+
+    width:100%;
+
+    height:140px;
+
+    border:2px solid #3b82f6;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    font-size:17px;
+
+    resize:none;
+
+}
+
+.voice-btn,
+.convert-btn{
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:14px 24px;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+.voice-btn{
+
+    background:#059669;
+
+}
+
+.voice-btn:hover{
+
+    background:#047857;
+
+}
+
+.convert-btn{
+
+    background:#2563eb;
+
+    width:100%;
+
+}
+
+.convert-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.step{
+
+    background:#eff6ff;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+#result{
+
+    background:#f8fafc;
+
+    border-left:6px solid #2563eb;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+footer{
+
+    text-align:center;
+
+    color:white;
+
+    margin-top:30px;
+
+    font-size:16px;
+
+}
+@keyframes floatHand {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#result img {
+    animation: floatHand 2s infinite ease-in-out;
+}
