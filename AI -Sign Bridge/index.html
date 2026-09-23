@@ -1,92 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI SignBridge</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI SignBridge</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+  <!-- Background decorative blobs -->
+  <div class="bg-blob bg-blob--1" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--2" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--3" aria-hidden="true"></div>
 
-<div class="header">
-<h1>🤟 AI SignBridge</h1>
-<p>From Words to Meaning, From Meaning to Signs</p>
-</div>
+  <div class="page-wrapper">
 
-<div class="input-box">
+    <!-- ── HEADER ───────────────────────────────────────── -->
+    <header class="site-header" role="banner">
+      <h1 class="site-title">
+        <span class="site-title__ai">AI</span> SignBridge
+      </h1>
+      <p class="site-subtitle">From Words to Meaning, From Meaning to Signs</p>
+    </header>
 
-<h2>🎤 Voice Input</h2>
+    <!-- ── MAIN CONTENT ──────────────────────────────────── -->
+    <main class="main-grid" role="main">
 
-<button class="voice-btn"
-onclick="startVoice()">
-🎤 Start Recording
-</button>
+      <!-- ── INPUT CARD ─────────────────────────────────── -->
+      <section class="card card--input" aria-label="Input section">
+        <div class="card__header">
+          <svg class="card__header-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          <h2 class="card__title">Input</h2>
+        </div>
 
-<h3>OR</h3>
+        <!-- Voice section -->
+        <div class="voice-container" role="region" aria-label="Voice input">
+          <div class="section-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+            <span>Voice Input</span>
+          </div>
+          <button class="voice-btn" onclick="startVoice()" aria-label="Start voice recording">
+            <span class="voice-btn__mic-ring" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                   aria-hidden="true">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+            </span>
+            <span>Start Recording</span>
+          </button>
+        </div>
 
-<h2>⌨️ Text Input</h2>
+        <!-- OR divider -->
+        <div class="or-divider" role="separator" aria-label="or">
+          <span class="or-divider__line" aria-hidden="true"></span>
+          <span class="or-divider__label">OR</span>
+          <span class="or-divider__line" aria-hidden="true"></span>
+        </div>
 
-<textarea id="textInput"
-placeholder="Type your sentence here..."></textarea>
+        <!-- Text input section -->
+        <div class="text-input-section" role="region" aria-label="Text input">
+          <div class="section-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <polyline points="4 7 4 4 20 4 20 7"/>
+              <line x1="9" y1="20" x2="15" y2="20"/>
+              <line x1="12" y1="4" x2="12" y2="20"/>
+            </svg>
+            <span>Text Input</span>
+          </div>
 
-<button class="convert-btn"
-onclick="convertText()">
-🚀 Convert to Sign Language
-</button>
+          <label for="textInput" class="sr-only">Enter your sentence for sign language conversion</label>
+          <textarea
+            id="textInput"
+            placeholder="Type your sentence here…"
+            aria-label="Enter your sentence for sign language conversion"
+            rows="5"
+          ></textarea>
 
-</div>
+          <button class="convert-btn" onclick="convertText()" aria-label="Convert text to sign language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span>Convert to Sign Language</span>
+          </button>
+        </div>
+      </section>
 
-<div class="processing">
+      <!-- ── OUTPUT CARD ────────────────────────────────── -->
+      <section class="card card--output" aria-label="Output section">
+        <div class="card__header">
+          <svg class="card__header-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+          <h2 class="card__title">Output</h2>
+        </div>
 
-<h2>🧠 AI Processing</h2>
+        <div id="result" class="result-area" role="region" aria-live="polite" aria-label="Sign language output">
+          <div class="result-empty-state">
+            <div class="result-empty-state__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" y1="1" x2="6" y2="4"/>
+                <line x1="10" y1="1" x2="10" y2="4"/>
+                <line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <p class="result-empty-state__title">Waiting for input</p>
+            <p class="result-empty-state__body">Enter text or use your voice to generate sign language output.</p>
+          </div>
+        </div>
+      </section>
 
-<div class="steps">
+    </main>
 
-<div class="step">
-✅ Speech to Text
-</div>
+    <!-- ── FOOTER ─────────────────────────────────────────── -->
+    <footer class="site-footer" role="contentinfo">
+      <p>AI SignBridge &nbsp;·&nbsp; Anveshan Project Expo 2026</p>
+    </footer>
 
-<div class="step">
-✅ NLP Analysis
-</div>
+  </div><!-- .page-wrapper -->
 
-<div class="step">
-✅ Generative AI
-</div>
-
-<div class="step">
-✅ ISL Generation
-</div>
-
-</div>
-
-</div>
-
-<div class="result-box">
-
-<h2>📄 Output</h2>
-
-<div id="result">
-
-Waiting for input...
-
-</div>
-
-</div>
-
-<footer>
-
-AI SignBridge | Anveshan Project Expo 2026
-
-</footer>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
-<img src="assets/sign.png" width="200">
 </html>

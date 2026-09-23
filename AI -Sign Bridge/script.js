@@ -10,7 +10,11 @@ function convertText() {
     let result = document.getElementById("result");
 
     result.innerHTML = `
-    <h3>⏳ AI is Processing...</h3>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:180px;gap:14px;text-align:center;">
+      <div style="width:36px;height:36px;border:3px solid #dce7f9;border-top-color:#2563eb;border-radius:50%;animation:spin .8s linear infinite;"></div>
+      <p style="font-size:.9rem;font-weight:600;color:#334155;letter-spacing:.02em;">AI is Processing…</p>
+    </div>
+    <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
     `;
 
     setTimeout(function(){
@@ -18,27 +22,24 @@ function convertText() {
         let simplified = simplifySentence(sentence);
 
         result.innerHTML = `
-        <h3>📄 Original Sentence</h3>
+        <h3> Original Sentence</h3>
         <p>${sentence}</p>
 
         <hr>
 
-        <h3>🧠 NLP Keywords</h3>
+        <h3> NLP Keywords</h3>
         <p>${extractKeywords(sentence)}</p>
 
         <hr>
 
-        <h3>🤖 AI Simplified Sentence</h3>
+        <h3> AI Simplified Sentence</h3>
         <p><b>${simplified}</b></p>
 
         <hr>
 
-       <h3>🤟 Indian Sign Language Output</h3>
+       <h3> Indian Sign Language Output</h3>
 
-       <img src="assets/sign.png"
-       style="width:250px;
-       border-radius:15px;
-       margin-top:10px;">
+       <img src="assets/sign.png" alt="Indian Sign Language output">
 
        <p>AI Generated Sign Animation</p>
 
